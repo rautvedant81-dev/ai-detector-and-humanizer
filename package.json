@@ -1,0 +1,21 @@
+{
+  "name": "humancheck-ai-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HumanCheck AI - AI Content Detector & Writing Humanizer Platform",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:client": "npm run --workspace=client dev",
+    "dev:server": "npm run --workspace=server dev",
+    "build": "npm run --workspace=client build && npm run --workspace=server build",
+    "start": "npm run --workspace=server start",
+    "install:all": "npm install && npm install --workspace=client && npm install --workspace=server"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
